@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmytqu1b0jdb"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_rtalt"]
+[ext_resource type="Texture2D" uid="uid://bwojxcpmtd6kx" path="res://ExternalAssets/Textures/Bot_Blue.png" id="2_kcyoj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmyw1"]
+size = Vector2(32, 32)
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(176, 80)
+script = ExtResource("1_rtalt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_rmyw1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_kcyoj")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+visible = false
+zoom = Vector2(2, 2)
